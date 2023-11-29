@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <!-- 1. Подсчитать сумму всех чисел в заданном пользователем
+    диапазоне. -->
+    <script>
+
+        let number = parseInt(prompt("Чисто 0-100: "));
+        let number2 = parseInt(prompt("Чисто 0-100: "));
+        let counter = 0;
+        for (let i = number; i <= number2; i++ ) {
+           counter+=i;
+        }
+        document.write(counter);
+
+    </script>
+
+
+    <!-- 2. Запросить 2 числа и найти только наибольший общий
+    делитель. -->
+    <!-- <script>
+        let a = parseInt(prompt("Введите первое число: "));
+        let b = parseInt(prompt("Введите второе число: "));
+
+        while (b !== 0) {
+            let temp = a % b;
+            a = b;
+            b = temp;
+        }
+
+        document.write("Наибольший общий делитель: " + a);
+    </script> -->
+
+
+    <!-- 3. Запросить у пользователя число и вывести все делители
+    этого числа. -->
+
+    <!-- <script>
+        let num = parseInt(prompt("Введите первое число: "));
+
+        for(let i = 0; i<=num; i++)
+        {
+            if(num % i ==0 && i!=0){
+                document.write("  Делитель: " + i);
+            }
+        }
+
+        
+    </script> -->
+
+
+
+    <!-- 4. Определить количество цифр в введенном числе. -->
+    <!-- <script>
+        let number = parseInt(prompt("Введите число: "));
+        let count = 0;
+        while (number > 1) {
+            number = number / 10;
+            count++;
+            
+        }
+        document.write("  Кол-во: " + count);
+    </script> -->
+
+
+    <!-- 5. Запросить у пользователя 10 чисел и подсчитать, сколько
+    он ввел положительных, отрицательных и нулей. При этом
+    также посчитать, сколько четных и нечетных. Вывести
+    статистику на экран. Учтите, что достаточно одной
+    переменной (не 10) для ввода чисел пользователем. -->
+    <!-- <script>
+        let number = 0;
+        let countminus = 0;
+        let countplus = 0;
+        let countnull = 0;
+        for (let i = 0; i < 10; i++) {
+            number = parseInt(prompt("Введите число: "));
+            if (number < 0) {
+                countminus++;
+            }
+            if (number > 0) {
+                countplus++;
+            }
+            if (number == 0) {
+                countnull++;
+            }
+
+        }
+        document.write("   Countminus: " + countminus);
+        document.write("   Countplus: " + countplus);
+        document.write("   Countnull: " + countnull);
+    </script> -->
+
+
+    <!-- 6. Зациклить калькулятор. Запросить у пользователя 2 числа
+    и знак, решить пример, вывести результат и спросить, хочет ли он 
+    решить еще один пример. И так до тех пор, пока
+    пользователь не откажется. -->
+    <!-- <script>
+        let number1, number2;
+        let temp = 0;
+        let symbol;
+        let check = 0;
+        let check2 = true;
+
+        do {
+            number1 = +prompt("Введите первое число:");
+            number2 = +prompt("Введите второе число:");
+            symbol = prompt("Введите операцию (+, -, *, /):");
+
+            switch (symbol) {
+                case "+":
+                    temp = number1 + number2;
+                    break;
+                case "-":
+                    temp = number1 - number2;
+                    break;
+                case "*":
+                    temp = number1 * number2;
+                    break;
+                case "/":
+                    temp = number1 / number2;
+                    break;
+                default:
+                    console.error("Invalid operator:", symbol);
+            }
+
+            console.log("Результат:", temp);
+
+            check = prompt("Продолжить расчет? (1 - да, 0 - нет):");
+        } while (check === 1);
+
+    </script> -->
+
+
+    <!-- 7. Запросить у пользователя число и на сколько цифр его
+    сдвинуть. Сдвинуть цифры числа и вывести результат (если
+    число 123456 сдвинуть на 2 цифры, то получится 345612). -->
+    <!-- <script>
+        let number;
+        let item;
+        let counter = 0;
+        let arr = [];
+        let arr2 = [];
+        let arrtemp = [];
+
+        number = prompt("Введите сколько будет цифр:");
+        counter = prompt("Введите на сколько сдвинуть");
+        for (let i = 1; i <= number; i++) {
+            const item = prompt("Введите элемент массива:");
+            arr.push(item);
+        }
+        console.log(arr);
+        arr2 = arr.slice();
+        for (let i = 0; i <= counter-1; i++) {   
+            temp = arr[i];
+            console.log("TEMP:", temp);
+            console.log("ARR2-1:", arr2);
+            console.log("ARR1-1:", arr);
+            arr2 = arr2.splice(1, arr2.length);
+            console.log("ARR1-2:", arr);
+            console.log("ARR2-2:", arr2);
+            arr2[arr2.length] = temp;
+            console.log("ARR2-3:", arr2);
+        }
+        console.log(arr2);
+    </script> -->
+
+
+    <!-- 8. Зациклить вывод дней недели таким образом: «День недели.
+    Хотите увидеть следующий день?» и так до тех пор, пока
+    пользователь нажимает OK. -->
+    <!-- <script>
+        let daysOfWeek = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
+
+        let day = 0;
+        let check = true;
+
+        while (check === true) {
+            console.log(`День недели: ${daysOfWeek[day]}`);
+
+            const answer = prompt("Хотите увидеть следующий день? (ОК/Нет)");
+
+            if (answer == "ОК") {
+                day++;
+                check = true;
+            } else {
+                check = false;
+            }
+        }
+    </script> -->
+
+
+
+    <!-- 9. Вывести таблицу умножения для всех чисел от 2 до 9.
+    Каждое число необходимо умножить на числа от 1 до 10. -->
+    <!-- <script>
+        for (const i of [2, 3, 4, 5, 6, 7, 8, 9]) {
+            for (const j of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) {
+                console.log(`${i} * ${j} = ${i * j}`);
+            }
+        }
+
+    </script> -->
+
+
+    <!-- 10. Игра «Угадай число». Предложить пользователю загадать
+    число от 0 до 100 и отгадать его следующим способом:
+    каждую итерацию цикла делите диапазон чисел пополам,
+    записываете результат в N и спрашиваете у пользователя
+    «Ваше число > N, < N или==N?». В зависимости от того что указал пользователь, 
+    уменьшаете диапазон. Начальныйдиапазон от 0 до 100, поделили пополам и 
+    получили 50. Если пользователь указал, что его число> 50, то изменили
+    диапазон на от 51 до 100. И так до тех пор, пока пользователь не выберет == N -->
+
+    <!-- <script>
+        function guessNumber() {
+            // Задаем начальный диапазон
+            let min = 0;
+            let max = 100;
+
+            // Задаем ограничение на количество попыток
+            let count = 0;
+
+            // Цикл продолжается до тех пор, пока пользователь не угадает число или не исчерпает количество попыток
+            while (true) {
+                // Получаем середину диапазона
+                let n = (min + max) / 2;
+
+                // Запрашиваем у пользователя ответ
+                let answer = prompt(`Ваше число > ${n}, < ${n} или == ${n}?`);
+
+                // Обрабатываем ответ пользователя
+                switch (answer) {
+                    case ">":
+                        // Число больше середины диапазона
+                        max = n - 1;
+                        break;
+                    case "<":
+                        // Число меньше середины диапазона
+                        min = n + 1;
+                        break;
+                    case "=":
+                        console.log("Правильно! Я угадал ваше число: ${n}");
+                        return n;
+                    default:
+                        console.log("Некорректный ответ");
+                        count++;
+                        if (count === 10) {
+                            console.log("Вы исчерпали количество попыток");
+                            return;
+                        }
+                }
+            }
+        }
+
+        // Вызов функции
+        let number = guessNumber();
+        console.log("Вы загадали число:", number);
+
+
+
+    </script> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+</body>
+
+</html>
